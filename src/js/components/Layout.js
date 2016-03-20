@@ -9,19 +9,27 @@ export default class Layout extends React.Component {
         super();
         this.name = "Stevan";
         this.state = {
-            description: "Bogosavljević"
+            description: "Bogosavljević",
+            title:"WlcStateTitle"
         }
     }
 
     render() {
 
         setTimeout(() => {
-            this.setState({description: "Stevan Bogosavljević Sr. Jr."})
+            this.setState({description: "Stevan Bogosavljević"})
         }, 2500);
+
+        setTimeout(() => {
+            this.setState({title: "setTimeoutStateTitle"})
+        }, 4500);
+
+        const title = "NewPropTitle";
         
         return (
             <div>
-                <Header/>
+                <Header title={title}/>
+                <Header title={this.state.title}/>
                 <h1>It works!</h1>
                 <h1>Hi {this.name}!</h1>
                 <h3>description {this.state.description}</h3>
