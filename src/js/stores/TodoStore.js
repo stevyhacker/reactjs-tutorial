@@ -30,12 +30,12 @@ class TodoStore extends EventEmitter {
         ]
     }
 
-    createTodo(text) {
+    createTodo(textData) {
         const id = Date.now();
 
         this.todos.push({
             id,
-            text,
+            text: textData,
             complete: false
         });
 
@@ -61,4 +61,5 @@ const todoStore = new TodoStore;
 
 dispatcher.register(todoStore.handleActions.bind(todoStore));
 window.dispatcher = dispatcher;
+
 export default todoStore;
