@@ -21,8 +21,8 @@ export default class Todos extends React.Component {
         });
     }
 
-    createTodo() {
-        TodoActions.createTodo(Date.now());
+    reloadTodos() {
+        TodoActions.reloadTodos();
     }
 
     render() {
@@ -34,7 +34,9 @@ export default class Todos extends React.Component {
 
         return (
             <div>
-                <button className="btn btn-success" onClick={this.createTodo.bind(this)}>Create!</button>
+                <button className="btn btn-success" onClick={this.reloadTodos.bind(this)}>Reload!</button>
+                <br/>
+                <input/>
                 <h1>Todos</h1>
                 <ul>{TodoComponents}</ul>
             </div>
